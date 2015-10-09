@@ -1,0 +1,125 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: collective.treatment\n"
+"POT-Creation-Date: 2015-04-09 15:28+0000\n"
+"PO-Revision-Date: 2015-04-10 15:29+0000’\n"
+"Last-Translator: INTK <info@intk.com>\n"
+"Language-Team: Dutch <info@intk.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: nl\n"
+"Language-Name: Dutch\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: collective.treatment\n"
+
+#: ../taxonomie.py
+msgid "Body"
+msgstr "Tekst"
+
+#: ../taxonomie.py
+msgid "Description"
+msgstr "Beschrijving"
+
+#: ../taxonomie.py
+msgid "Title"
+msgstr "Titel"
+
+#
+# Taxonomic term details
+#
+
+# Term
+
+#: ../taxonomie.py
+msgid "Taxonomic term details"
+msgstr "Taxonomische naamgegevens"
+
+#: ../taxonomie.py
+msgid "Term"
+msgstr "Term"
+
+#: ../taxonomie.py
+msgid "Scientific name"
+msgstr "Wetensch. naam"
+
+#: ../taxonomie.py
+msgid "Rank"
+msgstr "Rang"
+
+#: ../taxonomie.py
+msgid "Status"
+msgstr "Status"
+
+#: ../taxonomie.py
+msgid "Valid/accepted name"
+msgstr "Gedige naam"
+
+#: ../taxonomie.py
+msgid "Common name"
+msgstr "Populaire naam"
+
+#: ../taxonomie.py
+msgid "Synonyms"
+msgstr "Synoniemen"
+
+#: ../taxonomie.py
+msgid "Synonym"
+msgstr "Synoniem"
+
+#: ../taxonomie.py
+msgid "Hierarchy"
+msgstr "Hiërarchie"
+
+#: ../taxonomie.py
+msgid "Parent name"
+msgstr "Bovenliggende naam"
+
+#: ../taxonomie.py
+msgid "Child name"
+msgstr "Onderliggende naam"
+
+#: ../taxonomie.py
+msgid "Source and definition"
+msgstr "Bron en definitie"
+
+#: ../taxonomie.py
+msgid "Taxon author"
+msgstr "Auteur taxon"
+
+#: ../taxonomie.py
+msgid "Description"
+msgstr "Beschrijving"
+
+#: ../taxonomie.py
+msgid "Distribution"
+msgstr "Verspreiding"
+
+#: ../taxonomie.py
+msgid "Distribution"
+msgstr "Verspreiding"
+
+#: ../taxonomie.py
+msgid "Publication"
+msgstr "Publicatie"
+
+#: ../taxonomie.py
+msgid "Original description"
+msgstr "Originele beschrijving"
+
+#: ../taxonomie.py
+msgid "Expert"
+msgstr "Expert"
+
+#: ../taxonomie.py
+msgid "Other source"
+msgstr "Andere bron"
+
+#: ../taxonomie.py
+msgid "Notes"
+msgstr "Bijzonderheden"
+
+
+
+
