@@ -92,6 +92,8 @@
     />
 
   <!-- -*- extra stuff goes here -*- -->
+  <adapter name="taxonomicTermDetails_term_scientificName" factory=".utils.indexers.taxonomicTermDetails_term_scientificName" />
+
   <utility
     component=".utils.vocabularies.StatusVocabularyFactory"
     name="collective.taxonomie.status"
