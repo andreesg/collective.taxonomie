@@ -78,7 +78,7 @@ class NameFromPersonNames(object):
 
     @property
     def title(self):
-        return self.context.taxonomicTermDetails_term_scientificName
+        return self.context.title
 
 class ITaxonomie(form.Schema):
 
@@ -94,7 +94,7 @@ class ITaxonomie(form.Schema):
     # Taxonomic term details    #
     # # # # # # # # # # # # # # #
     model.fieldset('taxonomic_term_details', label=_(u'Taxonomic term details'), 
-        fields=['taxonomicTermDetails_term_scientificName', 'taxonomicTermDetails_term_rank',
+        fields=['title', 'taxonomicTermDetails_term_rank',
                 'taxonomicTermDetails_status_status', 'taxonomicTermDetails_status_validAcceptedName', 
                 'taxonomicTermDetails_commonName', 'taxonomicTermDetails_synonyms',
                 'taxonomicTermDetails_hierarchy_parentName', 'taxonomicTermDetails_hierarchy_childName',
@@ -105,11 +105,11 @@ class ITaxonomie(form.Schema):
     )
 
     # Term
-    taxonomicTermDetails_term_scientificName = schema.TextLine(
+    title = schema.TextLine(
         title=_(u'Scientific name'),
         required=True
     )
-    dexteritytextindexer.searchable('taxonomicTermDetails_term_scientificName')
+    dexteritytextindexer.searchable('title')
 
     taxonomicTermDetails_term_rank = schema.Choice(
         title=_(u'Rank'), 
