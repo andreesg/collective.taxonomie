@@ -54,7 +54,7 @@ from .utils.views import *
 
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
-from collective.object.utils.widgets import SimpleRelatedItemsFieldWidget, AjaxSingleSelectFieldWidget
+from collective.object.utils.widgets import SimpleRelatedItemsFieldWidget, AjaxSingleSelectFieldWidget, ExtendedRelatedItemsFieldWidget
 from collective.object.utils.source import ObjPathSourceBinder
 from plone.directives import dexterity, form
 
@@ -96,8 +96,8 @@ class ITaxonomie(form.Schema):
     model.fieldset('taxonomic_term_details', label=_(u'Taxonomic term details'), 
         fields=['title', 'taxonomicTermDetails_term_rank',
                 'taxonomicTermDetails_status_status', 'taxonomicTermDetails_status_validAcceptedName', 
-                'taxonomicTermDetails_commonName', 'taxonomicTermDetails_synonyms',
-                'taxonomicTermDetails_hierarchy_parentName', 'taxonomicTermDetails_hierarchy_childName',
+                'taxonomicTermDetails_commonName', 'taxonomicTermDetails_synonym',
+                'taxonomicTermDetails_hierarchy_parentName', 'taxonomicTermDetails_hierarchy_childNames',
                 'taxonomicTermDetails_sourceAndDefinition_taxonAuthor', 'taxonomicTermDetails_sourceAndDefinition_description',
                 'taxonomicTermDetails_sourceAndDefinition_distribution', 'taxonomicTermDetails_sourceAndDefinition_publication',
                 'taxonomicTermDetails_sourceAndDefinition_expert', 'taxonomicTermDetails_sourceAndDefinition_otherSource',
@@ -147,12 +147,17 @@ class ITaxonomie(form.Schema):
     form.widget(taxonomicTermDetails_commonName=BlockDataGridFieldFactory)
     dexteritytextindexer.searchable('taxonomicTermDetails_commonName')
 
-    # Synonyms
-    taxonomicTermDetails_synonyms = ListField(title=_(u'Synonym'),
-        value_type=DictRow(title=_(u' Synonym'), schema=ISynonym),
-        required=False)
-    form.widget(taxonomicTermDetails_synonyms=BlockDataGridFieldFactory)
-    dexteritytextindexer.searchable('taxonomicTermDetails_synonyms')
+    taxonomicTermDetails_synonym = RelationList(
+        title=_(u'Synonym'),
+        default=[],
+        missing_value=[],
+        value_type=RelationChoice(
+            title=u"Related",
+            source=ObjPathSourceBinder(portal_type='Taxonomie')
+        ),
+        required=False
+    )
+    form.widget('taxonomicTermDetails_synonym', ExtendedRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
 
     # Hierarchy
     taxonomicTermDetails_hierarchy_parentName = RelationList(
@@ -167,11 +172,17 @@ class ITaxonomie(form.Schema):
     )
     form.widget('taxonomicTermDetails_hierarchy_parentName', SimpleRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
 
-    taxonomicTermDetails_hierarchy_childName = ListField(title=_(u'Child name'),
-        value_type=DictRow(title=_(u'Child name'), schema=IChildName),
-        required=False)
-    form.widget(taxonomicTermDetails_hierarchy_childName=BlockDataGridFieldFactory)
-    dexteritytextindexer.searchable('taxonomicTermDetails_hierarchy_childName')
+    taxonomicTermDetails_hierarchy_childNames = RelationList(
+        title=_(u'Child name'),
+        default=[],
+        missing_value=[],
+        value_type=RelationChoice(
+            title=u"Related",
+            source=ObjPathSourceBinder(portal_type='Taxonomie')
+        ),
+        required=False
+    )
+    form.widget('taxonomicTermDetails_hierarchy_childNames', ExtendedRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
 
     # Source and definition
     taxonomicTermDetails_sourceAndDefinition_taxonAuthor = schema.TextLine(
