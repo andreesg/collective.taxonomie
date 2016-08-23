@@ -42,7 +42,7 @@ class ISynonym(Interface):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder(portal_type='Taxonomie')
+            vocabulary='collective.object.relateditems'
         ),
         required=False
     )
@@ -55,7 +55,7 @@ class IChildName(Interface):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder(portal_type='Taxonomie')
+            vocabulary='collective.object.relateditems'
         ),
         required=False
     )
@@ -73,3 +73,5 @@ class IOtherSource(Interface):
 
 class INotes(Interface):
     notes = schema.Text(title=_(u'Notes'), required=False)
+
+    

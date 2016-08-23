@@ -42,7 +42,7 @@ from collective import dexteritytextindexer
 from plone.dexterity.browser.view import DefaultView
 from plone.dexterity.content import Container
 from plone.dexterity.browser import add, edit
-from plone.app.widgets.dx import AjaxSelectFieldWidget
+from plone.app.z3cform.widget import AjaxSelectFieldWidget
 
 # # # # # # # # # # # # # # # # # #
 # !taxonomie specific imports!   #
@@ -134,7 +134,7 @@ class ITaxonomie(form.Schema):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder(portal_type='Taxonomie')
+            vocabulary='collective.object.relateditems'
         ),
         required=False
     )
@@ -153,7 +153,7 @@ class ITaxonomie(form.Schema):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder(portal_type='Taxonomie')
+            vocabulary='collective.object.relateditems'
         ),
         required=False
     )
@@ -166,7 +166,7 @@ class ITaxonomie(form.Schema):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder(portal_type='Taxonomie')
+            vocabulary='collective.object.relateditems'
         ),
         required=False
     )
@@ -178,7 +178,7 @@ class ITaxonomie(form.Schema):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder(portal_type='Taxonomie')
+            vocabulary='collective.object.relateditems'
         ),
         required=False
     )
