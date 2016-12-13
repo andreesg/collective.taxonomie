@@ -13,3 +13,14 @@ def taxonomicTermDetails_term_rank(object, **kw):
             return ""
     except:
         return ""
+
+@indexer(ITaxonomie)
+def taxonomie_priref(object, **kw):
+    try:
+        if hasattr(object, 'priref'):
+            return object.priref
+        else:
+            return ""
+    except:
+        return ""
+
