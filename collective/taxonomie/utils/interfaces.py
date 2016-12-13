@@ -13,6 +13,8 @@ from collective.object.utils.widgets import SimpleRelatedItemsFieldWidget, AjaxS
 from collective.object.utils.source import ObjPathSourceBinder
 from plone.directives import dexterity, form
 
+from plone.formwidget.contenttree import UUIDSourceBinder
+
 priority_vocabulary = SimpleVocabulary(list(_createPriorityVocabulary()))
 insurance_type_vocabulary = SimpleVocabulary(list(_createInsuranceTypeVocabulary()))
 
@@ -42,7 +44,7 @@ class ISynonym(Interface):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            vocabulary='collective.object.relateditems'
+            source=UUIDSourceBinder()
         ),
         required=False
     )
@@ -55,7 +57,7 @@ class IChildName(Interface):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            vocabulary='collective.object.relateditems'
+            source=UUIDSourceBinder()
         ),
         required=False
     )

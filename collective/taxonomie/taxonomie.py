@@ -58,6 +58,7 @@ from collective.object.utils.widgets import SimpleRelatedItemsFieldWidget, AjaxS
 from collective.object.utils.source import ObjPathSourceBinder
 from plone.directives import dexterity, form
 
+from plone.formwidget.contenttree import UUIDSourceBinder
 
 # # # # # # # # # # # # #
 # # # # # # # # # # # # #
@@ -134,7 +135,7 @@ class ITaxonomie(form.Schema):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            vocabulary='collective.object.relateditems'
+            source=UUIDSourceBinder()
         ),
         required=False
     )
@@ -153,7 +154,7 @@ class ITaxonomie(form.Schema):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            vocabulary='collective.object.relateditems'
+            source=UUIDSourceBinder()
         ),
         required=False
     )
@@ -166,7 +167,7 @@ class ITaxonomie(form.Schema):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            vocabulary='collective.object.relateditems'
+            source=UUIDSourceBinder()
         ),
         required=False
     )
@@ -178,7 +179,7 @@ class ITaxonomie(form.Schema):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            vocabulary='collective.object.relateditems'
+            source=UUIDSourceBinder()
         ),
         required=False
     )
